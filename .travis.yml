@@ -1,6 +1,10 @@
 language: java
 
 before_install:
+  - wget https://dl.dropboxusercontent.com/u/7897865/apache-maven-3.3.9.zip
+  - unzip -qq apache-maven-3.3.9.zip
+  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export PATH=$M2_HOME/bin:$PATH
 # An attempt to fix the buffer overflow in the pig tests
 # /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so(Java_java_net_Inet4AddressImpl_getLocalHostName+0x190)[
 # https://github.com/travis-ci/travis-ci/issues/1484
